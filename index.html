@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Two API's, One Sun</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- font cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bulma stylesheet link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"/>
+    <!-- Font addition link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <!-- custom css link -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+  </head>
+  <body>
+    <!-- modal layout -->
+    <div id="overlay">
+      <div id="modal">
+        <div id="rainbow" class="">
+          <div>
+            <button id="close-modal-btn" class="pressed">&nbsp;X&nbsp;</button>
+          </div>
+          <div id="rainbowIMG">
+            <img src="./assets/images/sunrainbow.jpg" alt="sunset rainbow pic" id="sunRainbow">
+          </div>
+        </div>
+        <ul id="introDiv">
+          <li><h2 id="intro1" class="intro">Want to know when the sun is up in your area?</h2></li>
+          <li><h2 id="intro2" class="intro">Type your zip code below.</h2></li>
+          <li><h2 id="intro3" class="intro">Press the [Submit] button to find out.</h2></li>
+        </ul>
+        <div id="postalInputDiv" class="flex-column full-width">
+          <div id="textInputDiv">
+            <input type="text" id="textInput" class="inputBorder" minLength="5" maxLength="5" placeholder="Enter Zip Code"/>
+          </div>
+          <div id="submitBtnDiv">
+            <button id="submit" class="myButton hover pressed white">Submit</button>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <header id="header" class="header">
+      <div class="titleDiv">
+        <h1 class="projectTitle">Two API's, One Sun</h1>
+        <!-- nav links with technologies used for this project -->
+        <nav>
+          <ul class="navbar-item flex-row">
+            <li class="topnav"><a href="https://api.zippopotam.us/" target="_blank" class="column links white navStyle pressed">Z i p p o p o t a m u s &nbsp&nbsp&nbsp A P I</a></li>
+            <li class="topnav"><a href="https://bulma.io/documentation/layout/tiles/" target="_blank" class="column links white navStyle pressed">B&nbsp&nbspu&nbsp&nbspl&nbsp&nbspm&nbsp&nbspa</a></li>
+            <li class="topnav"><a href="https://sunrisesunset.io/api/" target="_blank" class="column links white navStyle pressed">S u n r i s e&nbsp&nbspS u n s e t&nbsp&nbspA P I</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- api data query results windows -->
+    <div id="apiResultsSection" class="flex-row">
+      <!-- zip code api results https://api.zippopotam.us/us/ + queried data -->
+      <div id="postal" class="flex-column">
+        <div id="postalStatsDiv" class="zipDiv flex-column">
+          <h2 class="zipResults">Zippopotam.us API RESULTS</h2>
+          <ul>
+            <li class="left-align white">ZIP CODE:<span id="zipCode" class="right-align white"></span></li>
+            <li class="left-align white">CITY:<span id="city" class="right-align white"></span></li>
+            <li class="left-align white">STATE:<span id="state" class="right-align white"></span></li>
+            <li class="left-align white">LATITUDE:<span id="latitude" class="right-align white"></span></li>
+            <li class="left-align white">LONGITUDE:<span id="longitude" class="right-align white"></span></li>
+          </ul>
+          <div class="justCenter">
+            <button id="show-modal-btn" class="myButton hover" onClick="window.location.href=window.location.href">
+              <p class="white pressed">Let's Try Another Zip code!!!</p>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- sun rise api results https://sunrisesunset.io/api/ + queried data -->
+      <div id="sun" class="flex-column">
+        <h2 class="sunResults">Sunrise Sunset API RESULTS</h2>
+        <ul>
+          <li class="white">TIMEZONE:     <span id="timezone" class="right-align white"></span></li>
+          <li class="white">DAWN:     <span id="dawn" class="right-align white"></span></li>
+          <li class="white">SUNRISE:     <span id="sunrise" class="right-align white"></span></li>
+          <li class="white">SOLAR NOON:     <span id="solarNoon" class="right-align white"></span></li>
+          <li class="white">SUNSET:     <span id="sunset" class="right-align white"></span></li>
+          <li class="white">DUSK:     <span id="dusk" class="right-align white"></span></li>
+          <li class="white">DAY LENGTH:     <span id="dayLength" class="right-align white"></span></li>
+        </ul>
+        <div id="sunStatBtn">
+          <button id="getSun" class="myButton hover" type="button">
+            <p class="white pressed">Click for Today's Sun Stats</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer id="footer" class="footer">
+      <nav class="columns">
+        <ul class="bottomNav"><a href="https://github.com/calebgdavidson" target="_blank"><span id="caleb" class="fab fa-github column links white pressed"> C A L E B</span></a></ul>
+        <ul class="bottomNav"><a href="https://github.com/genrp24" target="_blank"><span id="geneveve" class="fab fa-github column links white pressed"> G E N E V E V E</span></a></ul>
+        <ul class="bottomNav"><a href="https://github.com/samocain93" target="_blank"><span id="sam" class="fab fa-github column links white pressed"> S A M</span></a></ul>
+        <ul class="bottomNav"><a href="https://github.com/JimblesMw" target="_blank"><span id="matthew" class="fab fa-github column links white pressed"> M A T T H E W</span></a></ul>
+        <ul class="bottomNav"><a href="https://github.com/jk377y" target="_blank"><span id="james" class="fab fa-github column links white pressed"> J A M E S</span></a></ul>
+      </nav>
+    </footer>
+    <!-- js script src linked -->
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html
+

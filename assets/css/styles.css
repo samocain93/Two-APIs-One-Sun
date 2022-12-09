@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --windowColor: rgba(0, 116, 161, 0.589);
+    --bgcolor: rgb(26, 131, 207);
+    --border: rgb(0, 0, 0);
+    --hover: rgb(255, 255, 0);
+    --buttonColor: rgb(48, 48, 48);
+    --whiteText: rgb(255, 255, 255);
+    --closeBtn: crimson;
+    --cloudGray: rgb(124, 124, 124);
+    --insetBorder: silver;
+    --navBackground: rgba(146, 146, 146, 0.692);
+    --navButtonSolid: rgb(144, 144, 144);
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/sunheader.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#header {
+    height: 20%;
+    background-color: var(--bgcolor);
+    border: 3px solid black; 
+}
+
+.titleDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 25px;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    font-size: 4rem;
+} 
+
+h2 {
+    color: var(--whiteText);
+    text-align: center;
+}
+
+.column {
+    padding: 6px;
+}
+
+#apiResultsSection {
+    height: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer {
+    height: 20%;
+    width: 100%;
+    background-color: var(--bgcolor);
+    justify-content: space-around;
+    padding-left: 100px;
+    padding-right: 100px;
+    border-top: 3px solid black
+}
+
+#postal, #sun {
+    display: flex;
+    width: 30%;
+    height: 300px;
+    padding: 1rem;
+    margin: 1rem;
+    border: 4px solid var(--border);
+    border-radius: 30px;
+    box-shadow: 1px 1px 5px 1px;
+    background-color: var(--windowColor);
+}
+
+#postalInputDiv {
+    display: flex;
+    margin-top: 20px;
+}
+
+#postalStatsDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#resetButton {
+    margin-top: 10px;
+}
+
+#sun {
+    display: flex;
+    width: 30%;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+#textInput {
+    height: fit-content;
+    width: fit-content;
+    border: 5px inset var(--bgcolor);
+    line-height: 24px;
+    text-align: center;
+}
+
+ul {
+    width: 100%;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+li {
+    position: relative;
+}
+
+li span:nth-child(3){
+    position: absolute;
+    float: right;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.right-align {
+    float: right;
+}
+
+#getSun {
+    display: flex;
+    justify-content: center;
+}
+
+.myButton {
+    background-color: var(--buttonColor);
+    font-weight: bold;
+    font-size: 16px;
+    height: fit-content;
+    width: fit-content;
+    padding: 5px;
+    border: 2px solid var(--border);
+    border-radius: 30px;
+    box-shadow: 1px 1px 5px 1px;
+    justify-content: center;
+}
+
+.white {
+    color: var(--whiteText);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: 2rem;
+    border: 2px solid var(--border);
+    box-shadow: 1px 1px 5px 1px;
+    background-color: rgba(87, 85, 85, 0.952);
+}
+
+#modal {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    max-height: 450px;
+    margin: auto;
+    background-color: var(--windowColor);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 2px solid var(--border);
+    border-radius: 30px;
+    box-shadow: 1px 1px 5px 1px;
+}
+
+#show-modal-btn {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#rainbow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    width: 100%;
+    border-radius: 15px;
+}
+
+#rainbowIMG {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#sunRainbow {
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+#close-modal-btn {
+    color: var(--closeBtn);
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--buttonColor);
+    border-radius: 5px;
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#close-modal-btn:active {
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    transform: translateY(4px);
+}
+
+#intro1 {
+    border-top: 4px ridge var(--insetBorder);
+    border-left: 4px ridge var(--insetBorder);
+    border-right: 4px ridge var(--insetBorder);
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 10px;
+    border-radius: 15px;
+    background-color: var(--cloudGray);
+}
+
+#intro2 {
+    border-left: 4px ridge var(--insetBorder);
+    border-right: 4px ridge var(--insetBorder);
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 15px;
+    background-color: var(--cloudGray);
+}
+
+#intro3 {
+    border-bottom: 4px ridge var(--insetBorder);
+    border-left: 4px ridge var(--insetBorder);
+    border-right: 4px ridge var(--insetBorder);
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    background-color: var(--cloudGray);
+}
+
+#submitBtnDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#submit {
+    width: 50%;
+}
+
+#textInputDiv {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.hover:hover {
+    color: var(--whiteText);
+    border: 3px solid var(--hover);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.links {
+    font-size: 18px;
+    text-align: center;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+.topnav {
+    height: 30px;
+}
+
+#sunStatBtn {
+    display: flex;
+    justify-content: center;
+}
+
+.bottomNav {
+    padding-top: 30px;
+}
+
+#caleb, #geneveve, #sam, #matthew, #james {
+    background-color: var(--navBackground);
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 2px solid var(--border);
+    border-radius: 30px;
+}
+
+#caleb {
+    color: crimson;
+}
+
+#geneveve {
+    color: orange;
+}
+
+#sam {
+    color: yellow;
+}
+
+#matthew {
+    color: green;
+}
+
+#james {
+    color: blue;
+}
+
+#caleb:hover, #geneveve:hover, #sam:hover, #matthew:hover, #james:hover {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid var(--whiteText);
+    box-shadow: 1px 1px 5px 1px;
+}
+
+.pressed:active {
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    transform: translateY(4px);
+}
+
+.zipResults {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--whiteText);
+    margin-bottom: 25px;
+}
+
+.sunResults {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--whiteText);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.projectTitle {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 84px;
+    background-image: linear-gradient(60deg, black, black, black,#E21143, #FFB03A, yellow, green, blue, black, black, black);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.navStyle {
+    color: var(--whiteText);
+    border: 3px solid black;
+    border-radius: 30px;
+    font-family: 'Luckiest Guy', cursive;
+    background-color: var(--navButtonSolid);
+    font-size: 22px;
+}
+
+.navStyle:hover {
+    color: var(--whiteText);
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 1px 1px 5px 1px;
+    border: 2px solid white;
+}
+
+.justCenter {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
